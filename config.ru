@@ -9,3 +9,4 @@ require './controllers/products_controller'
 require './controllers/users_controller'
 
 map('/') { run ApplicationController }
+map('/users') { run UsersController}
