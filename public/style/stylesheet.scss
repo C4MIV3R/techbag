@@ -1,3 +1,8 @@
+$button-success: rgb(85, 201, 121);
+$button-success-hover: rgb(53, 167, 89);
+$button-primary: rgb(48, 156, 185);
+$navbar-background: rgb(101, 101, 101);
+
 html, body {
   margin: 0;
   padding: 0;
@@ -15,7 +20,7 @@ html, body {
   transition: color 0.2s ease;
 }
 .button:hover {
-  background-color: #1EAEDB;
+  background-color: $button-primary;
   border: 1px solid transparent;
   color: #FFF;
 }
@@ -26,17 +31,17 @@ html, body {
   top: 0;
   left: 0;
   height: 5.5rem;
-  background: #fff;
+  background: $navbar-background;
   z-index: 99;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
+  // border-top: 1px solid #fff;
+  border-bottom: 1px solid #000;
   .navbar-list {
     list-style: none;
     .navbar-item {
       display: inline;
       .navbar-link {
         text-decoration: none;
-        color: #000;
+        color: #fff;
         text-transform: uppercase;
         font-size: 12px;
         font-weight: 600;
@@ -46,8 +51,33 @@ html, body {
         line-height: 5.5rem;
       }
       .navbar-link:hover {
-        color: #1EAEDB;
+        color: $button-primary;
       }
     }
   }
+}
+.button.button-success,
+button.button-success,
+input[type="submit"].button-success,
+input[type="reset"].button-success,
+input[type="button"].button-success {
+  color: #FFF;
+  background-color: $button-success;
+  border-color: $button-success;
+  transition: background-color 0.2s ease;
+}
+
+.button.button-success:hover,
+button.button-success:hover,
+input[type="submit"].button-success:hover,
+input[type="reset"].button-success:hover,
+input[type="button"].button-success:hover,
+.button.button-success:focus,
+button.button-success:focus,
+input[type="submit"].button-success:focus,
+input[type="reset"].button-success:focus,
+input[type="button"].button-success:focus {
+  color: #FFF;
+  background-color: $button-success-hover;
+  border-color: $button-success-hover;
 }
