@@ -19,8 +19,9 @@ class UsersController < ApplicationController
 
   # User Login
   post '/login' do
-    user = User[username: params[:username]]
-    compare_to = BCrypt::Password.new
+    user = User.find_by username: params[:username]
+    puts user.password_hash
+    compare_to = BCrypt::Password.new(user.password_hash)
     if user && compare_to == params[:password_hash]
       session[:logged_in] = true
       session[:current_user_id] = user[:id]
@@ -29,21 +30,6 @@ class UsersController < ApplicationController
       "You have entered the wrong email & pasword combination"
     end
   end
-  # user login
-  # post '/login' do
-  #   user = User
-  #   compare_to =
-  #   if user && compare_to == params[:password_hash]
-  #     session[:logged_in] = true
-  #     session[:username] = params[:username]
-  #     "Welcome back #{params[:username]}"
-  #     redirect '/'
-  #   else
-  #     "You have entered an incorrect username & password combination"
-  #     redirect '/users'
-  #   end
-  # end
-
 
     # User Logout
     get '/logout' do

@@ -1,3 +1,3 @@
-class Product < Sequel::Model
+class Product < ActiveRecord::Base
 
 end

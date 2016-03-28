@@ -1,9 +1,10 @@
 require 'bundler'
 Bundler.require
 
-DB = Sequel.sqlite('development.sqlite')
-
-require 'sinatra/base'
+ActiveRecord::Base.establish_connection(
+  :adapter    => 'postgresql',
+  :database   => 'tech_bags'
+)
 
 require './models/user'
 require './models/product'
