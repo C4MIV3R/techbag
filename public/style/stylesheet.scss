@@ -1,7 +1,12 @@
+// TO DO:
+// Implement scroll event listener to change navbar
+// Implement login
+// Implement product controller and pages
+
 $button-success: rgb(85, 201, 121);
 $button-success-hover: rgb(53, 167, 89);
 $button-primary: rgb(48, 156, 185);
-$navbar-background: rgb(101, 101, 101);
+$navbar-background: #FFF;
 
 html, body {
   margin: 0;
@@ -11,8 +16,28 @@ html, body {
   font-family: 'Raleway', sans-serif;
 }
 .header {
-  margin-top: 70px;
+  margin-top: 7rem;
   text-align: center;
+}
+#about {
+  padding-top: 6.5rem;
+  div:last-child {
+    text-align: center;
+  }
+}
+#featured {
+  padding: 1rem;
+}
+#something {
+  padding-top: 6.5rem;
+  text-align: center;
+}
+.something_div {
+    width: 100%;
+    background-color: $button-primary;
+  }
+.login_register {
+  padding-top: 6.5rem;
 }
 .button {
   transition: background-color 0.2s ease;
@@ -41,7 +66,7 @@ html, body {
       display: inline;
       .navbar-link {
         text-decoration: none;
-        color: #fff;
+        color: #000;
         text-transform: uppercase;
         font-size: 12px;
         font-weight: 600;
