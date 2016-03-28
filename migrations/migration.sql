@@ -1,3 +1,4 @@
+# working version
 CREATE DATABASE tech_bags;
 \c tech_bags
 CREATE TABLE users (id SERIAL PRIMARY KEY, username VARCHAR(255), password_hash VARCHAR(255), email VARCHAR(255));
