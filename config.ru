@@ -1,11 +1,7 @@
 require 'bundler'
 Bundler.require
 
-
-ActiveRecord::Base.establish_connection(
-  :adapter  => 'postgresql',
-  :database => 'omg_wtfbbq_app_sinatra'
-  )
+DB = Sequel.sqlite('development.sqlite')
 
 require 'sinatra/base'
 

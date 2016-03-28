@@ -20,11 +20,11 @@ class UsersController < ApplicationController
   # User Login
   post '/login' do
     user = User[username: params[:username]]
-    compare_to = BCrypt::Password.new(user.password_hash)
-    if user && compare_to == params[:password]
+    compare_to = BCrypt::Password.new
+    if user && compare_to == params[:password_hash]
       session[:logged_in] = true
       session[:current_user_id] = user[:id]
-      "Welcome Back #{params[:email]}"
+      "Welcome Back #{params[:username]}"
     else
       "You have entered the wrong email & pasword combination"
     end
