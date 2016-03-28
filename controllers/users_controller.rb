@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  @user_message = ""
+
   get '/' do
     erb :login
   end
@@ -14,26 +16,28 @@ class UsersController < ApplicationController
       })
     session[:logged_in] = true
     session[:username] = params[:username]
+    @user_message = "Welcome to the club #{params[:username]}"
     redirect '/'
   end
 
   # User Login
   post '/login' do
     user = User.find_by username: params[:username]
-    puts user.password_hash
     compare_to = BCrypt::Password.new(user.password_hash)
     if user && compare_to == params[:password_hash]
       session[:logged_in] = true
       session[:current_user_id] = user[:id]
-      "Welcome Back #{params[:username]}"
+      @user_message = "Welcome Back #{params[:username]}"
+      redirect '/users'
     else
-      "You have entered the wrong email & pasword combination"
+      @user_message = "You have entered the wrong email & pasword combination"
+      redirect '/users'
     end
   end
 
     # User Logout
     get '/logout' do
       session[:logged_in] = false
-      "You are logged out now"
+      "You are now logged out. Come back soon."
     end
 end
