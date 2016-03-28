@@ -1,11 +1,11 @@
 // TO DO:
 // Implement scroll event listener to change navbar
-// Implement login
+// Implement login - I THINK WE"RE GOOD
 // Implement product controller and pages
 
-$button-success: rgb(85, 201, 121);
-$button-success-hover: rgb(53, 167, 89);
-$button-primary: rgb(48, 156, 185);
+$success: rgb(85, 201, 121);
+$success-hover: rgb(53, 167, 89);
+$primary: rgb(48, 156, 185);
 $navbar-background: #FFF;
 
 html, body {
@@ -34,7 +34,7 @@ html, body {
 }
 .something_div {
     width: 100%;
-    background-color: $button-primary;
+    background-color: $primary;
   }
 .login_register {
   padding-top: 6.5rem;
@@ -45,7 +45,7 @@ html, body {
   transition: color 0.2s ease;
 }
 .button:hover {
-  background-color: $button-primary;
+  background-color: $primary;
   border: 1px solid transparent;
   color: #FFF;
 }
@@ -76,7 +76,7 @@ html, body {
         line-height: 5.5rem;
       }
       .navbar-link:hover {
-        color: $button-primary;
+        color: $primary;
       }
     }
   }
@@ -87,8 +87,8 @@ input[type="submit"].button-success,
 input[type="reset"].button-success,
 input[type="button"].button-success {
   color: #FFF;
-  background-color: $button-success;
-  border-color: $button-success;
+  background-color: $success;
+  border-color: $success;
   transition: background-color 0.2s ease;
 }
 
@@ -103,6 +103,6 @@ input[type="submit"].button-success:focus,
 input[type="reset"].button-success:focus,
 input[type="button"].button-success:focus {
   color: #FFF;
-  background-color: $button-success-hover;
-  border-color: $button-success-hover;
+  background-color: $success-hover;
+  border-color: $success-hover;
 }
