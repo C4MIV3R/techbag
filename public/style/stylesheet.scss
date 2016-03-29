@@ -1,11 +1,12 @@
 // TO DO:
 // Implement scroll event listener to change navbar
-// Implement login - I THINK WE"RE GOOD
+// Implement login - I THINK WE'RE GOOD
 // Implement product controller and pages
 
+// ------------- Variables -----------------
 $success: rgb(85, 201, 121);
 $success-hover: rgb(53, 167, 89);
-$primary: rgb(48, 156, 185);
+$primary: #1EAEDB;
 $navbar-background: #FFF;
 
 html, body {
@@ -19,36 +20,22 @@ html, body {
   margin-top: 7rem;
   text-align: center;
 }
-#about {
-  padding-top: 6.5rem;
+#login-featured {
+  margin-top: 2rem;
+  padding-top: 3.5rem;
   div:last-child {
     text-align: center;
   }
 }
-#featured {
-  padding: 1rem;
-}
-#something {
-  padding-top: 6.5rem;
+#lower-content {
+  padding-top: 3.5rem;
   text-align: center;
 }
-.something_div {
-    width: 100%;
-    background-color: $primary;
-  }
-.login_register {
-  padding-top: 6.5rem;
+.login-register {
+  padding-top: 7rem;
 }
-.button {
-  transition: background-color 0.2s ease;
-  transition: border 0.2s ease;
-  transition: color 0.2s ease;
-}
-.button:hover {
-  background-color: $primary;
-  border: 1px solid transparent;
-  color: #FFF;
-}
+
+// --------------- Navbar styles --------------
 .navbar {
   position: fixed;
   display: block;
@@ -81,6 +68,62 @@ html, body {
     }
   }
 }
+
+// -------------- Random Links ----------------
+.random-link {
+  text-decoration: none;
+  color: #000;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .2rem;
+  transition: color 0.2s ease;
+  margin-right: 35px;
+  line-height: 1.5rem;
+}
+.random-link:hover {
+  color: $primary;
+}
+// -------------- Footer styles ----------------
+#footer {
+ padding-top: 6.5rem;
+ padding-bottom: 2.5rem;
+ background-color: rgb(45, 43, 43);
+  .random-link {
+    color: #fff;
+ }
+  .random-link:hover {
+   color: $primary;
+ }
+  p {
+   color: #fff;
+   text-transform: uppercase;
+   font-size: 12px;
+   font-weight: 600;
+   letter-spacing: .2rem;
+ }
+  #twitter-link {
+   margin: 0;
+   color: $primary;
+ }
+ #twitter-link:hover {
+   color: $success-hover;
+ }
+}
+// -------------- Random Buttons ----------------
+button,
+.button {
+  transition: background-color 0.2s ease;
+  transition: border 0.2s ease;
+  transition: color 0.2s ease;
+}
+button:hover,
+.button:hover {
+  background-color: $primary;
+  border: 1px solid transparent;
+  color: #FFF;
+}
+// ------------ Button Success (Green) ------------
 .button.button-success,
 button.button-success,
 input[type="submit"].button-success,
@@ -91,7 +134,6 @@ input[type="button"].button-success {
   border-color: $success;
   transition: background-color 0.2s ease;
 }
-
 .button.button-success:hover,
 button.button-success:hover,
 input[type="submit"].button-success:hover,
