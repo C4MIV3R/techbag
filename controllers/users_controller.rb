@@ -3,7 +3,11 @@ class UsersController < ApplicationController
   @user_message = ""
 
   get '/' do
-    erb :login
+    if session[:logged_in] == true
+      redirect '/my_account'
+    else
+      erb :login
+    end
   end
 
   # user registration
@@ -15,8 +19,9 @@ class UsersController < ApplicationController
         :password_hash    => hashed_password
       })
     session[:logged_in] = true
-    session[:username] = params[:username]
-    @user_message = "Welcome to the club #{params[:username]}"
+    session[:username]  = params[:username]
+    puts session[:username]
+    @user_message = "Welcome to the club #{session[:username]}"
     redirect '/'
   end
 
@@ -27,17 +32,27 @@ class UsersController < ApplicationController
     if user && compare_to == params[:password_hash]
       session[:logged_in] = true
       session[:current_user_id] = user[:id]
-      @user_message = "Welcome Back #{params[:username]}"
-      redirect '/users'
+      @user_message = "Welcome Back #{session[:username]}"
+      redirect '/account/my_account'
     else
       @user_message = "You have entered the wrong email & pasword combination"
-      redirect '/users'
+      redirect '/account'
     end
   end
 
     # User Logout
     get '/logout' do
       session[:logged_in] = false
-      "You are now logged out. Come back soon."
+      @user_message = "You are now logged out. Come back soon."
+      redirect '/'
     end
+
+    get '/my_account' do
+      if session[:logged_in] == true
+        erb :my_account
+      else
+        redirect '/account'
+      end
+    end
+    
 end
