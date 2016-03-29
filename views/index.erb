@@ -3,28 +3,42 @@
     <div class="twelve columns">
       <h2>Find the bag that fits your schedule.</h2>
       <p>If you've ever tried to fit a laptop, tablet, e-reader, all the associated chargers/cables, AND your work... You know how difficult it can be. <br> We aim to help you find your perfect bag to ensure you never have to carry a massive hiking backpack just to fit all your day-to-day gear.</p>
-      <a class="button" href="users/">Register</a>
-      <a class="button" href="users/">Login</a>
+      <a class="button" href="/about">Learn More</a>
     </div>
   </section>
 </div>
-<div class="something_div">
-<div class="container" id="about">
-  <section>
-    <div class="eight columns">
-      <h4>What is TechBags?</h4>
-      <p>At its core, TechBags is a website dedicated to reducing readers' time spent looking for backpacks/bags for their technology gear.</p>
-    </div>
-    <div id="featured" class="four columns">
+
+<div class="container" id="login-featured">
+<% if session[:logged_in] == true %>
+  <p><%= @user_message %></p>
+    <div class="twelve columnns" id="featured_bag">
       <h4>Featured Bags</h4>
       <a href="#"><img src="http://placehold.it/200x200" alt="" /></a>
-      <!-- <a href="#"><img src="http://placehold.it/200x200" alt="" /></a> -->
+      <a href="#"><img src="http://placehold.it/200x200" alt="" /></a>
+      <a href="#"><img src="http://placehold.it/200x200" alt="" /></a>
+      <a href="#"><img src="http://placehold.it/200x200" alt="" /></a>
+
     </div>
-  </section>
-</div>
+<% else %>
+  <div class="five columns">
+    <h2>Login</h2>
+    <form class="" action="/account/login" method="post">
+      <label for="username">Username: </label>
+      <input class="u-full-width" type="text" name="username" value="" placeholder="Username">
+      <label for="password">Password: </label>
+      <input class="u-full-width" type="password" name="password_hash" value="" placeholder="Password">
+      <button type="submit" name="button">Login</button>
+    </form>
+    <a class="random-link" href="/account">Don't have an account? Sign up now.</a>
+  </div>
+  <div class="five columns u-pull-right" id="featured_bag">
+    <h4>Featured Bag</h4>
+    <a href="#"><img src="http://placehold.it/200x200" alt="" /></a>
+  </div>
+<% end %>
 </div>
   <div class="container">
-    <section id="something">
+    <section id="lower-content">
       <div class="twelve columns">
         <h3>Something goes here</h3>
         <img src="http://placehold.it/400x250" alt="" />

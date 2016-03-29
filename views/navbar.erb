@@ -4,8 +4,12 @@
         <li class="navbar-item"><a class="navbar-link" href="/">Home</a></li>
         <li class="navbar-item"><a class="navbar-link" href="#">Bags</a></li>
         <li class="navbar-item"><a class="navbar-link" href="#">About</a></li>
-        <li class="navbar-item u-pull-right"><a class="navbar-link" href="/users/logout">Logout</a></li>
-        <li class="navbar-item u-pull-right"><a class="navbar-link" href="/users">Login</a></li>
+        <% if session[:logged_in] == true %>
+          <li class="navbar-item u-pull-right"><a class="navbar-link" href="/account/logout">Logout</a></li>
+          <li class="navbar-item u-pull-right"><a class="navbar-link" href="/account/my_account">My Account</a></li>
+        <% else %>
+          <li class="navbar-item u-pull-right"><a class="navbar-link" href="/account">Login</a></li>
+        <% end %>
       </ul>
   </div>
 </nav>
