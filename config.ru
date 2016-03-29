@@ -15,5 +15,5 @@ require './controllers/products_controller'
 require './controllers/users_controller'
 
 map('/') { run ApplicationController }
-map('/users') { run UsersController }
+map('/account') { run UsersController }
 map('/products') { run ProductsController }
